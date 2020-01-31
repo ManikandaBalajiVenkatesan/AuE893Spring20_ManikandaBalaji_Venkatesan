@@ -1,0 +1,8 @@
+prefix=/home/manikanda/catkin_ws/install
+
+Name: turtle_cleaner
+Description: Description of turtle_cleaner
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/manikanda/catkin_ws/install/lib 
+Requires: 

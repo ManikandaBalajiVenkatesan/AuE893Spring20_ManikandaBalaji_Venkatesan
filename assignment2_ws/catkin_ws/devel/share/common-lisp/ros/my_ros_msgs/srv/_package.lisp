@@ -1,0 +1,15 @@
+(cl:defpackage my_ros_msgs-srv
+  (:use )
+  (:export
+   "CIRCLEAREA"
+   "<CIRCLEAREA-REQUEST>"
+   "CIRCLEAREA-REQUEST"
+   "<CIRCLEAREA-RESPONSE>"
+   "CIRCLEAREA-RESPONSE"
+   "SET_LED"
+   "<SET_LED-REQUEST>"
+   "SET_LED-REQUEST"
+   "<SET_LED-RESPONSE>"
+   "SET_LED-RESPONSE"
+  ))
+
