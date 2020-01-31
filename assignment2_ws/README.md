@@ -41,5 +41,7 @@ package name is assignment_2
 ROSLAUNCH
 
 Launch file named turtlesim_circle.launch is inside "launch" folder of "src" which will start turtlesim_node and circle.py code. It takes turning radius r = 2 from param in launch file. 
+roslaunch assignment_2 turtlesim_circle.launch
 
 Launch file named two_turtlesim.launch is inside "launch" folder of "src" which will start two turtlesim_nodes simultaneously to run circle.py code and square_openloop.py nodes in it individually. It takes parameters from param for circle radius and square side length in launch file.
+roslaunch assignment_2 two_turtlesim.launch
