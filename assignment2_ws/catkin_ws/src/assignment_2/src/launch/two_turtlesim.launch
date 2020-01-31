@@ -1,0 +1,23 @@
+<launch>
+	<arg name="r" default="2"/>
+	<arg name="omega" default="1"/>
+	<arg name="length" default="3"/>
+	<arg name="angle" default="3.14/2"/>
+
+	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_A">
+		<remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/></node>
+	
+	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_B">
+		<remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/></node>
+	
+	<node pkg="assignment_2" type="circle.py" name="circle">
+		<param name="r" value="$(arg r)"/>
+		<param name="omega" value="$(arg omega)"/>
+	<remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/></node>
+	
+	<node pkg="assignment_2" type="square_openloop.py" name="square">
+		<param name="length" value="$(arg length)"/>
+	<remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/>
+	
+	</node>
+</launch>

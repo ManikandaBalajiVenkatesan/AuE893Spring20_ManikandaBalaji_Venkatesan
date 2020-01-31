@@ -5,9 +5,9 @@ package name is assignment_2
 
 1. Circle.py
 * This code is used to command the turtle in turtlesim to move in a circular path.
-* Turning radius'r' and direction of rotation will be requested by code once it is executed using 	  command "rosrun assignment_2 circle.py"
-* The angular velocity of turtle about z axis is set to 1 and linear velocity along x axis is set to 	  'r' using the formula v = r*omega, in this case omega is 1 as mentioned earlier.
-* Once the velocity is set ,it is published to /turtle1/cmd_vel to which turtlesim_node is a   subscriber.
+* Turning radius'2' and direction of rotation is set to clockwise by code once it is executed using 	  command "rosrun assignment_2 circle.py"
+* The angular velocity of turtle about z axis is set to 1 and linear velocity along x axis is set to 	  '2' using the formula v = r*omega, in this case omega is 1 as mentioned earlier.
+* Once the velocity is set ,it is published to /turtle1/cmd_vel topic to which turtlesim_node is a   subscriber.
 
 2. square_openloop.py
 
@@ -19,7 +19,7 @@ package name is assignment_2
 * Next while loop is used for turning turtle by 90 degrees, here angle of rotation of while loop is calculated by z angular velocity and step time. Once angle rotated is equal to 90 while loop exits after which z angular velocity is set to zero.
 * Both these while loops are inside the main while loop which would run continuously till ctrl+c is set. Therefore the above two while loops will get executed one after the other continuously making the turtle move in straight line for 2 units then turn 90 degrees then move 2 units and so on thus making the turtle move in a square path of size 2x2.
 
-4. square_closedloop.py
+3. square_closedloop.py
 
 * This code is to move turtle in a square of size 3x3 whose coordinates are (5,5), (8,5), (8,8), (5,8). 
 * A subscriber to get feedback on current position & orientation of turtle using /turtle1/Pose topic is created in addition to publisher used in previous programs.
@@ -40,5 +40,6 @@ package name is assignment_2
 
 ROSLAUNCH
 
-Two launch files namely square_closedloop_launch.launch & square_openloop_launch.launch files are created inside "launch" folder inside "src" folder. These can be run using roslaunch assignment_2 <launch_filename>.
-Both the launch files are intended to start turtlesim node and then square_closedloop.py and square_openloop.py files respectively.
+Launch file named turtlesim_circle.launch is inside "launch" folder of "src" which will start turtlesim_node and circle.py code. It takes turning radius r = 2 from param in launch file. 
+
+Launch file named two_turtlesim.launch is inside "launch" folder of "src" which will start two turtlesim_nodes simultaneously to run circle.py code and square_openloop.py nodes in it individually. It takes parameters from param for circle radius and square side length in launch file.

@@ -9,7 +9,7 @@ if __name__ == '__main__':
 	rate = rospy.Rate(10)
 	vel_pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
 	vel_msg = Twist()
-	square_side = 2
+	square_side = rospy.get_param('~length')
 	linear_v = 0.2
 	angular_v = 0.2
 	pi = 3.14
